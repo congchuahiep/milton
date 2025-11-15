@@ -1,13 +1,21 @@
 "use client";
 
-import { HeroSection } from "@/app/_sections";
-import { Header } from "@/components";
+import {
+  FaqSection,
+  HeroSection,
+  PlayingAndContactSection,
+  ShowcaseSection,
+  YourPathSection,
+} from "@/app/_sections";
 
 export default function Home() {
-	return (
-		<div className="flex flex-col h-[200vh] w-full relative">
-			<Header />
-			<HeroSection />
-		</div>
-	);
+  return (
+    <main className="flex flex-col h-full w-full relative gap-16">
+      <HeroSection />
+      <YourPathSection />
+      <ShowcaseSection />
+      <PlayingAndContactSection />
+      <FaqSection />
+    </main>
+  );
 }
