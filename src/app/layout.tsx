@@ -3,6 +3,7 @@ import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import { Footer, Header } from "@/components";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/sonner";
 
 const beVietnamPro = Be_Vietnam_Pro({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

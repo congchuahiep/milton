@@ -1,8 +1,8 @@
 export const routes = {
-	home: "/",
-	about: "/about",
-	contact: "/contact",
-	dashboard: "/dashboard",
-	profile: "/profile",
+  home: "/",
+  register: "/register",
+  about: "/about",
+  contact: "/contact",
+  dashboard: "/dashboard",
+  profile: "/profile",
 };
-

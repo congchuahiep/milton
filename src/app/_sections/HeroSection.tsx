@@ -9,6 +9,8 @@ import { Item, ItemContent, ItemMedia, ItemTitle } from "@/components/ui/item";
 import { useHover } from "@/hooks/useHover";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { routes } from "@/configs/routes";
 
 const cards = [
   {
@@ -98,102 +100,111 @@ function DesktopHeroSection() {
       </div>
 
       <div
-        className={cn("flex flex-1 gap-4 justify-center h-[520px] max-w-8xl")}
+        className={cn(
+          "flex flex-1 gap-4 justify-center h-[520px] max-w-8xl px-4",
+        )}
       >
         {cards.map((card, index) => (
-          <div
+          <Link
             // biome-ignore lint/suspicious/noArrayIndexKey: static element
             key={index}
-            ref={index === 3 ? hoverRef : null}
-            className={cn(
-              "relative w-full h-full cursor-pointer",
-              "transition-all duration-300 group rounded-4xl overflow-hidden",
-              "shadow-rose-400/20",
-              isHovered && "shadow-[0_0_32px_2px]",
-            )}
+            href={routes.register}
+            className="relative w-full h-full cursor-pointer"
           >
             <div
+              ref={index === 3 ? hoverRef : null}
               className={cn(
-                "absolute bg-linear-to-t from-rose-500/50 to-60% to-rose-500/10 size-full z-10",
-                index === 3 && "z-20 from-rose-500/70",
+                "relative w-full h-full cursor-pointer",
+                "transition-all duration-300 group rounded-4xl overflow-hidden",
+                "shadow-rose-400/20",
+                isHovered && "shadow-[0_0_32px_2px]",
               )}
-            />
-
-            {card.title && (
+            >
               <div
                 className={cn(
-                  "absolute bottom-12 z-20 text-center w-full uppercase",
-                  "font-semibold opacity-0 transition-opacity duration-300",
-                  "group-hover:opacity-100",
-                )}
-              >
-                <p className="text-foreground/70">Trở thành</p>
-                <h3 className="text-foreground text-lg font-bold">
-                  {card.title}
-                </h3>
-              </div>
-            )}
-
-            {index === 3 && (
-              <div
-                className={cn(
-                  "absolute z-20 left-1/2 -translate-x-1/2 bottom-8",
-                  "flex flex-col items-center w-full",
-                )}
-              >
-                <PlayButton
-                  className={cn(
-                    "group-hover:drop-shadow-[0_0_16px_rgba(255,255,255,0.8)]",
-                    "size-18 transition-all duration-300",
-                  )}
-                />
-                <div
-                  className={cn(
-                    "text-white mt-4 font-bold text-xl uppercase text-center",
-                    "select-none",
-                  )}
-                >
-                  Chơi ngay
-                </div>
-              </div>
-            )}
-
-            <Image
-              src={card.url}
-              alt={card.alt}
-              width={200}
-              height={200}
-              className={cn(
-                "absolute",
-                "w-full h-full object-cover",
-                "transition-all duration-300 z-10",
-                "group-hover:opacity-0",
-                isHovered && "opacity-0",
-              )}
-            />
-            {card.man && (
-              <Image
-                src={card.man}
-                alt={card.alt}
-                width={400}
-                height={400}
-                className={cn(
-                  "absolute bottom-0 translate-y-40",
-                  "w-full h-120 object-cover grayscale-100",
-                  "transition-all duration-300 z-10",
-                  "group-hover:translate-y-35 group-hover:grayscale-0",
-                  isHovered && "translate-y-35 grayscale-0",
+                  "absolute bg-linear-to-t from-rose-500/50 to-60% to-rose-500/10 size-full z-10",
+                  index === 3 && "z-20 from-rose-500/70",
                 )}
               />
-            )}
-            <Image
-              src={card.hoverUrl}
-              alt={card.alt}
-              width={200}
-              height={200}
-              className={cn("w-full h-full object-cover absolute top-0 left-0")}
-            />
-          </div>
+
+              {card.title && (
+                <div
+                  className={cn(
+                    "absolute bottom-12 z-20 text-center w-full uppercase",
+                    "font-semibold opacity-0 transition-opacity duration-300",
+                    "group-hover:opacity-100",
+                  )}
+                >
+                  <p className="text-foreground/70">Trở thành</p>
+                  <h3 className="text-foreground text-lg font-bold">
+                    {card.title}
+                  </h3>
+                </div>
+              )}
+
+              {index === 3 && (
+                <div
+                  className={cn(
+                    "absolute z-20 left-1/2 -translate-x-1/2 bottom-8",
+                    "flex flex-col items-center w-full",
+                  )}
+                >
+                  <PlayButton
+                    className={cn(
+                      "group-hover:drop-shadow-[0_0_16px_rgba(255,255,255,0.8)]",
+                      "size-18 transition-all duration-300",
+                    )}
+                  />
+                  <div
+                    className={cn(
+                      "text-white mt-4 font-bold text-xl uppercase text-center",
+                      "select-none",
+                    )}
+                  >
+                    Chơi ngay
+                  </div>
+                </div>
+              )}
+
+              <Image
+                src={card.url}
+                alt={card.alt}
+                width={200}
+                height={200}
+                className={cn(
+                  "absolute",
+                  "w-full h-full object-cover",
+                  "transition-all duration-300 z-10",
+                  "group-hover:opacity-0",
+                  isHovered && "opacity-0",
+                )}
+              />
+              {card.man && (
+                <Image
+                  src={card.man}
+                  alt={card.alt}
+                  width={400}
+                  height={400}
+                  className={cn(
+                    "absolute bottom-0 translate-y-40",
+                    "w-full h-120 object-cover grayscale-100",
+                    "transition-all duration-300 z-10",
+                    "group-hover:translate-y-35 group-hover:grayscale-0",
+                    isHovered && "translate-y-35 grayscale-0",
+                  )}
+                />
+              )}
+              <Image
+                src={card.hoverUrl}
+                alt={card.alt}
+                width={200}
+                height={200}
+                className={cn(
+                  "w-full h-full object-cover absolute top-0 left-0",
+                )}
+              />
+            </div>
+          </Link>
         ))}
       </div>
     </>
