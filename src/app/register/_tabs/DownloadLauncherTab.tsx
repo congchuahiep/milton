@@ -10,17 +10,21 @@ import { cn } from "@/lib/utils";
 
 export default function DownloadLauncherTab() {
   return (
-    <div className="flex flex-col items-center justify-center mt-8 w-lg relative">
+    <div
+      className={cn(
+        "flex flex-col items-center justify-center mt-8 w-lg relative",
+      )}
+    >
       <Image
-        src="/images/nah_2.png"
+        src="https://majestic-rp.ru/images/new-account/launcher.webp"
         alt="Chưa có ảnh"
         width={510}
         height={340}
-        className="rounded-md border"
+        className="rounded-md border brightness-90 opacity-50"
         loading="eager"
       />
 
-      <div className="absolute w-full text-center mt-4">
+      <div className="absolute w-full text-center mb-12">
         <h3 className="uppercase font-bold text-2xl">
           Tải Launcher và chơi ngay
         </h3>

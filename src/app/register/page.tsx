@@ -1,4 +1,5 @@
 import { AppWindowIcon, UserIcon } from "@phosphor-icons/react/dist/ssr";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
@@ -8,6 +9,28 @@ import {
   GamePurchaseTab,
 } from "./_tabs";
 import { RegisterTabsProvider } from "./provider";
+
+export const metadata: Metadata = {
+  title: "Đăng ký",
+  keywords: ["Milton", "GTA 5", "GTA V", "RolePlay", "Đăng ký"],
+
+  openGraph: {
+    title: "Đăng ký | Milton RP",
+    description:
+      "Milton RolePlay – Thế giới GTA 5 RP đỉnh cao, nơi hơn 10000 người chơi mỗi ngày cùng hòa mình vào trải nghiệm nhập vai sống động và chân thực nhất.",
+    url: "https://website-cua-ban.com",
+    siteName: "Milton RP",
+    images: [
+      {
+        url: "https://website-cua-ban.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "vi_VN",
+    type: "website",
+  },
+};
 
 const tabsItems = [
   {

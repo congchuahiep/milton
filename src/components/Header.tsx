@@ -23,7 +23,7 @@ const navItems = [
   {
     id: 1,
     title: "Chơi ngay",
-    href: routes.home,
+    href: routes.register,
   },
   {
     id: 2,
