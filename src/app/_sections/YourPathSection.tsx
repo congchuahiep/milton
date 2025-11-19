@@ -182,7 +182,7 @@ export default function YourPathSection() {
           "xl:top-1/2 md:-translate-y-[12%] xl:-translate-y-[37%] xl:-translate-x-full",
           "transition-all duration-300",
           "md:scale-60 xl:scale-100 rotate-y-180 xl:rotate-y-0",
-          "scale-40 -translate-x-1/3",
+          "scale-40 -translate-x-1/3 h-auto",
           !isLeftHovered && "grayscale-100",
         )}
       />
@@ -197,7 +197,7 @@ export default function YourPathSection() {
           "xl:top-1/2 md:-translate-y-[10%] xl:-translate-y-[35%] xl:translate-x-full",
           "transition-all duration-300  overflow-hidden",
           "md:scale-60 xl:scale-100 rotate-y-180 xl:rotate-y-0",
-          "scale-40 translate-x-1/3",
+          "scale-40 translate-x-1/3 h-auto",
           !isRightHovered && "grayscale-100",
         )}
       />
