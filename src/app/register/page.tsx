@@ -64,7 +64,10 @@ const tabsItems = [
 export default function Page() {
   return (
     <section
-      className={cn("flex flex-col items-center h-[960px] pt-36", "relative")}
+      className={cn(
+        "flex flex-col items-center h-[960px] pt-36 w-full",
+        "relative",
+      )}
     >
       <Image
         src="/images/register-background.png"
@@ -77,8 +80,11 @@ export default function Page() {
         )}
       />
 
-      <RegisterTabsProvider defaultValue="step-1" className="items-center">
-        <TabsList className="bg-transparent gap-12 mb-10">
+      <RegisterTabsProvider
+        defaultValue="step-1"
+        className="items-center w-full px-2 justify-center"
+      >
+        <TabsList className="bg-transparent gap-12 mb-10 max-w-xs">
           {tabsItems.map(({ value, label, icon }) => (
             <TabsTrigger
               key={value}
@@ -106,7 +112,11 @@ export default function Page() {
         </TabsList>
 
         {tabsItems.map(({ value, content }) => (
-          <TabsContent key={value} value={value}>
+          <TabsContent
+            key={value}
+            value={value}
+            className="w-full flex flex-col items-center"
+          >
             {content}
           </TabsContent>
         ))}

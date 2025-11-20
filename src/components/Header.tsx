@@ -102,7 +102,9 @@ export default function Header() {
       <div
         className={cn("flex justify-end grow basis-0", isMobile && "hidden")}
       >
-        <Button className="h-12 font-bold text-base w-28">DONATE</Button>
+        <Button className="h-12 font-bold text-base w-28">
+          <Link href={routes.donate}>DONATE</Link>
+        </Button>
       </div>
 
       {isMobile && <MobileNavMenu />}

@@ -46,12 +46,12 @@ const createAccountSchema = z
     path: ["confirmPassword"],
   });
 
-type CreateAccountType = z.infer<typeof createAccountSchema>;
+type CreateAccountFormValue = z.infer<typeof createAccountSchema>;
 
 export default function CreateAccountTab() {
   const { setTab } = useRegisterTabs();
 
-  const form = useForm<CreateAccountType>({
+  const form = useForm<CreateAccountFormValue>({
     resolver: zodResolver(createAccountSchema),
     mode: "onSubmit",
     defaultValues: {
@@ -68,7 +68,7 @@ export default function CreateAccountTab() {
   const password = form.watch("password");
   const confirmPassword = form.watch("confirmPassword");
 
-  const onSubmit = (data: CreateAccountType) => {
+  const onSubmit = (data: CreateAccountFormValue) => {
     toast("You submitted the following values:", {
       description: (
         <pre className="bg-neutral-700 text-neutral-50 mt-2 w-[320px] overflow-x-auto rounded-md p-4">
@@ -86,13 +86,13 @@ export default function CreateAccountTab() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-lg">
+    <div className="flex flex-col items-center justify-center w-full ">
       <h2 className="uppercase font-black text-xl mb-4">Tạo tài khoản</h2>
 
       <form
         id="form-create-account"
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full"
+        className="w-full max-w-lg"
       >
         <FieldGroup className="gap-0">
           <InputField name="email" placeholder="Email" control={form.control}>
@@ -153,7 +153,11 @@ export default function CreateAccountTab() {
             </InputGroupAddon>
           </InputField>
 
-          <div className="grid grid-cols-2 mt-4 gap-4 h-16">
+          <div
+            className={cn(
+              "grid lg:grid-cols-2 mt-4 gap-y-2 gap-x-4 h-24 lg:h-16",
+            )}
+          >
             <Button
               variant="outline"
               className="h-full uppercase font-bold"

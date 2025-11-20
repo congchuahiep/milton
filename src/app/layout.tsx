@@ -49,7 +49,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(`${beVietnamPro.className} antialiased bg-black`)}>
         <Header />
-        {children}
+        <main className="flex flex-col items-center w-full">{children}</main>
         <Footer />
         <Toaster />
       </body>

@@ -6,6 +6,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Field, FieldError, FieldLabel } from "../ui/field";
 import { InputGroup, InputGroupInput } from "../ui/input-group";
+import { NumberInput } from "../ui/number-input";
 
 interface InputFieldProps extends React.ComponentProps<"input"> {
   label?: string;
@@ -15,6 +16,7 @@ interface InputFieldProps extends React.ComponentProps<"input"> {
 export default function InputField<T extends FieldValues>({
   label,
   children,
+  type,
   ...props
 }: InputFieldProps & UseControllerProps<T>) {
   const { field, fieldState } = useController(props);

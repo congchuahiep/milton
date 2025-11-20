@@ -12,20 +12,22 @@ export default function DownloadLauncherTab() {
   return (
     <div
       className={cn(
-        "flex flex-col items-center justify-center mt-8 w-lg relative",
+        "flex flex-col items-center justify-center mt-8 w-lg max-w-full relative",
       )}
     >
-      <Image
-        src="https://majestic-rp.ru/images/new-account/launcher.webp"
-        alt="Chưa có ảnh"
-        width={510}
-        height={340}
-        className="rounded-md border brightness-90 opacity-50"
-        loading="eager"
-      />
+      <div className="relative w-lg max-w-full h-auto overflow-hidden">
+        <Image
+          src="https://majestic-rp.ru/images/new-account/launcher.webp"
+          alt="Chưa có ảnh"
+          width={510}
+          height={340}
+          className="rounded-md border brightness-90 opacity-50"
+          loading="eager"
+        />
+      </div>
 
       <div className="absolute w-full text-center mb-12">
-        <h3 className="uppercase font-bold text-2xl">
+        <h3 className="uppercase font-bold text-lg lg:text-2xl">
           Tải Launcher và chơi ngay
         </h3>
         <Button

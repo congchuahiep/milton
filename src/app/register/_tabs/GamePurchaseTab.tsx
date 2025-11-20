@@ -8,7 +8,7 @@ export default function GamePurchaseTab() {
   const { setTab } = useRegisterTabs();
 
   return (
-    <div className="flex flex-col items-center mt-8 gap-2 w-sm">
+    <div className="flex flex-col items-center mt-8 gap-2 max-w-sm">
       <Image
         src="https://majestic-rp.ru/images/new-account/gta.webp"
         alt="GTA V"
