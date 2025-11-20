@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     title: "Milton RP",
     description:
       "Milton RolePlay – Thế giới GTA 5 RP đỉnh cao, nơi hơn 10000 người chơi mỗi ngày cùng hòa mình vào trải nghiệm nhập vai sống động và chân thực nhất.",
-    url: "https://website-cua-ban.com",
+    url: "https://milton-v.com/",
     siteName: "Milton RP",
     images: [
       {
-        url: "https://website-cua-ban.com/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "https://cdn.milton-v.com/public/milton.jpg",
+        width: 600,
+        height: 600,
       },
     ],
     locale: "vi_VN",

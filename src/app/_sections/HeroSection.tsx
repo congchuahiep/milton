@@ -2,15 +2,15 @@
 
 import { UsersIcon } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import { PlayButton } from "@/components";
 import { Button } from "@/components/ui/button";
 import { Item, ItemContent, ItemMedia, ItemTitle } from "@/components/ui/item";
+import { routes } from "@/configs/routes";
 import { useHover } from "@/hooks/useHover";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { routes } from "@/configs/routes";
 
 const cards = [
   {
@@ -178,6 +178,7 @@ function DesktopHeroSection() {
                   "group-hover:opacity-0",
                   isHovered && "opacity-0",
                 )}
+                loading="eager"
               />
               {card.man && (
                 <Image
@@ -192,6 +193,7 @@ function DesktopHeroSection() {
                     "group-hover:translate-y-35 group-hover:grayscale-0",
                     isHovered && "translate-y-35 grayscale-0",
                   )}
+                  loading="eager"
                 />
               )}
               <Image
@@ -202,6 +204,7 @@ function DesktopHeroSection() {
                 className={cn(
                   "w-full h-full object-cover absolute top-0 left-0",
                 )}
+                loading="eager"
               />
             </div>
           </Link>
