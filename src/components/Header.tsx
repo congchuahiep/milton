@@ -45,6 +45,11 @@ const navItems = [
     title: "Wiki",
     href: routes.home,
   },
+  {
+    id: 6,
+    title: "Donate",
+    href: routes.donate,
+  },
 ];
 
 export default function Header() {
@@ -130,7 +135,7 @@ function MobileNavMenu() {
       <DrawerContent className="z-100 h-screen max-h-screen! border-none">
         <div className="flex justify-between py-8 px-4">
           <DrawerTitle>
-            <Link href={routes.home}>
+            <Link href={routes.home} onClick={() => setIsOpen(false)}>
               <Image
                 src="/logo.png"
                 alt="Milton Logo"
@@ -150,13 +155,14 @@ function MobileNavMenu() {
             </Button>
           </DrawerClose>
         </div>
-        <DrawerHeader>
+        <DrawerHeader className="gap-2">
           {navItems.map((item) => (
             <Button
               key={item.id}
               asChild
               variant="primary-outline"
               className="border-stone-600 h-10 uppercase font-bold"
+              onClick={() => setIsOpen(false)}
             >
               <Link href={item.href}>{item.title}</Link>
             </Button>

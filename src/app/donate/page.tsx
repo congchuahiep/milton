@@ -20,8 +20,14 @@ import { Item, ItemContent, ItemMedia, ItemTitle } from "@/components/ui/item";
 import { cn } from "@/lib/utils";
 
 const donateSchema = z.object({
-  username: z.string().min(1).max(255),
-  email: z.email().min(1).max(255),
+  username: z
+    .string()
+    .min(6, "Tên tài khoản tối thiểu 6 ký tự")
+    .max(255, "Tên tài khoản tối đa 255 ký tự"),
+  email: z
+    .email("Địa chỉ email không hợp lệ")
+    .min(1, "Email không được để trống")
+    .max(255, "Email tối đa 255 ký tự"),
   amount: z
     .string()
     .min(1, "Hãy nhập mức nạp hợp lệ")
@@ -38,6 +44,7 @@ export default function Page() {
     defaultValues: {
       email: "",
       username: "",
+      amount: "",
     },
   });
 
@@ -61,7 +68,7 @@ export default function Page() {
   return (
     <section
       className={cn(
-        "flex flex-col items-end h-[960px] pt-36",
+        "flex flex-col items-center md:items-end h-[960px] pt-36",
         "relative w-full max-w-7xl",
       )}
     >
@@ -69,6 +76,7 @@ export default function Page() {
         className={cn(
           "absolute left-[-213px] xl:left-0 top-[177px]",
           "-z-10 flex justify-center items-center",
+          "hidden md:block",
         )}
       >
         <Image
@@ -96,7 +104,7 @@ export default function Page() {
 
       <div
         className={cn(
-          "col-start-2 h-full w-lg relative pr-8",
+          "h-full w-full max-w-lg relative px-4 xl:pr-8",
           "flex flex-col gap-8",
         )}
       >

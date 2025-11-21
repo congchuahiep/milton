@@ -305,9 +305,12 @@ function MobileHeroSection() {
             "font-bold text-lg uppercase",
             "shadow-[0_0_64px_24px] shadow-rose-500/30",
           )}
+          asChild
         >
-          <PlayButton className="size-8!" />
-          Chơi ngay!
+          <Link href={routes.register}>
+            <PlayButton className="size-8!" />
+            Chơi ngay!
+          </Link>
         </Button>
         <Item
           size="sm"
